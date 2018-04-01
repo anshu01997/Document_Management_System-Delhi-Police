@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="images/favicon.ico" /> 
+    <title>Send Paper</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+
+    <link rel="stylesheet" href="assets/stylesheets/styles.css" />
+    <link rel="shortcut icon" href="images/Delhi_police_logo.jpg">
+</head>
+
+<body>
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+               <img src="images/dtp_logo.png" height="50px" width="180px" style="margin-left:10px;" align="center"> 
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <!--  <a class="navbar-brand" href="http://localhost:8000">DELHI TRAFFIC POLICE - Document Management System</a> -->
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                   <form action="logout.php" method="POST">
+                    <button class="dropdown-toggle" data-toggle="dropdown" style="margin-top:0.5em">
+                        <i class="fa fa-user fa-fw"></i> <i>Logout</i>
+                    </button>
+                </form>
+
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                        <br>
+                       <br>
+                       <li></li>
+                         <li>
+                            <a href="index.html"><i class="fa fa-edit fa-fw"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="send.html"><i class="fa fa-dashboard fa-fw"></i> Send </a>
+                        </li>
+                        <li>
+                            <a href="receive.html"><i class="fa fa-bar-chart-o fa-fw"></i> Receive </a>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="search.html"><i class="fa fa-table fa-fw"></i> Search</a>
+                        </li>
+                       
+                        <li>
+                            <a href="#"><i class="fa fa-file-word-o fa-fw"></i> View Reports<span class="fa arrow"></span></a> </li>
+                        
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+             <div class="row">
+
+                <!-- /.col-lg-12 -->
+           </div>
+            <div class="row" style="margin-top:20px;">  
+                <div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4">
+        <form role="form" action="send_paper_gd.php" method="POST">
+            <div class="form-group">
+                <label>Reference Number</label>
+                <input class="form-control" type="text" name="p_ref_id" placeholder="Enter the document despatch number here" required>
+            </div>
+            <div class="form-group" style="marg">
+                <label>Subject</label>
+                <input class="form-control" type="text" name="p_sub" placeholder="Enter the subject here" required>
+            </div>
+            <div class="form-group">
+                <label>Received from:</label>
+                <select class="form-control" name="p_despatch_dept_type" required>
+                    <option>--Select--</option>
+                    <option>District</option>
+                    <option>Unit</option>
+                    <option>Office</option>
+                    <option>Individual</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Enter the name of Distt/Unit/Office/Individual</label>
+                <input class="form-control" type="text" name="p_despatch_dept_name" placeholder="Enter the name of District/Unit/Office/Individual" required>
+            </div>
+             <div class="form-group">
+                <label>Despatch Date</label>
+                <input class="form-control" type="datetime-local" name="p_despatch_dt" placeholder="dd/mm/yyyy">
+            </div>
+           <div class="form-group">
+                <label>Number of Papers</label>
+                <input class="form-control" type="number" name="p_nop" placeholder="Enter the number of papers here" required>
+            </div>
+              <div class="form-group">
+                <label>Diary Number</label>
+                <input class="form-control" type="text" name="p_diary_num" type="text" placeholder="Enter the diary number here" required>
+            </div>
+            <div class="form-group">
+                <label>Date of receiving</label>
+                <input class="form-control" type="datetime-local" name="p_date_recv" placeholder="dd/mm/yyyy">
+            </div>
+            <div class="form-group">
+                <label>Registry Number (if paper received by post)</label>
+                <input class="form-control" type="text" name="p_reg_num" placeholder="Enter the registry no., if paper received by post">
+            </div>
+            
+            <div class="form-group">
+                <label>Mark to:</label>
+                <select class="form-control" name="p_to_dept" required>
+                                    <option>Spl.CP/Traffic</option>
+                                    <option>Jt.CP/Traffic</option>
+                                    <optgroup label="Addl.CP/Traffic">
+                                        <option>ACP/T-CR/SR</option>
+                                        <option>ACP/T-WR/OR</option>
+                                        <option>ACP/T-ER/North</option>
+                                    </optgroup>
+                                    <optgroup label="DCsP/T">
+                                        <option>DCP/T-North Range</option>
+                                        <option>DCP/T-Outer Range</option>
+                                        <option>DCP/T-Western Range</option>
+                                        <option>DCP/T-Southern Range</option>
+                                        <option>DCP/T-Eastern Range</option>
+                                        <option>DCP/T-Central Range</option>
+                                        <option>DCP/T-VIP Route & TE</option>
+                                        <option>DCP/T-HQ</option>
+                                    </optgroup>
+                                     <optgroup label="ACsP/T Districts">
+                                        <option>ACP/T-North</option>
+                                        <option>ACP/T-Central</option>
+                                        <option>ACP/T-New Delhi</option>
+                                        <option>ACP/T-East</option>
+                                        <option>ACP/T-North East</option>
+                                        <option>ACP/T-South</option>
+                                        <option>ACP/T-South East</option>
+                                        <option>ACP/T-South West</option>
+                                        <option>ACP/T-West</option>
+                                        <option>ACP/T-Outer</option>
+                                        <option>ACP/T-North West</option>
+                                    </optgroup>
+               
+                                    <optgroup label="ACP/TE">
+                                        <option>ACP/TE Office</option>
+                                        <option>Traffic Engineering Branch</option>
+                                        <option>Signal Cell</option>
+                                        <option>Accident Research Cell</option>
+                                        <option>Computer Center & Prosecution Branch</option>
+                                        <option>Draftsman/Mapping Section</option>
+                                       
+                                        <option>Public Interface Unit</option>
+                                    </optgroup>
+                                    <optgroup label="ACP/T-PRG">
+                                        <option>ACP/T-PRG Office</option>
+                                        <option>Complaint Branch(HAC)</option>
+                                        <option>RTI Cell</option>
+                                    </optgroup>
+                                     <optgroup label="ACP/T-Route">
+                                        <option>ACP/T-Route Office</option>
+                                        <option>Function Branch</option>
+                                        <option>MT Section</option>
+                                    </optgroup>
+                                     <optgroup label="ACP/T-Training & Modernization">
+                                        <option>ACP/T-Training & Modernization Office</option>
+                                        <option>Modernization</option>
+                                        <option>Clothing Store</option>
+                                    </optgroup>
+                                    <optgroup label="ACP/T-HQ-I">
+                                        <option>ACP/T-HQ-I Office</option>
+                                        <option>HAE Branch</option>
+                                        <option>HAG Branch</option>
+                                        <option>Account Branch</option>
+                                        <option>General Store</option>
+                                    </optgroup>
+                                    <optgroup label="ACP/T-HQ-II">
+                                        <option>ACP/T-HQ-II Office</option>
+                                        <option>Clothing Store</option>
+                                        <option>Legal Cell</option>
+                                        <option>HAA Branch</option>
+                                        <option>Pension Cell</option>
+                                        <option>NEP Branch</option>
+                                        <option>Pre Paid Section</option>
+                                    </optgroup>
+                                     <optgroup label="ACP/T-RSC">
+                                        <option>ACP/T-RSC Office</option>
+                                        <option>Road Safety Cell</option>
+                                        <option>Photo Section</option>
+                                        <option>Notice Branch & Process Branch</option>
+                                        <option>Printing</option>
+                                    </optgroup>
+                                    <option>RI/TODAPUR</option>
+                                    <option>INSP. ADMN.</option>
+                                    <option>SIP Branch</option>
+                                    <option>HACR Branch</option>
+                                    <option>HAP Branch</option>
+                                    <option>CARE TAKER</option>
+                                    <option>I/C Canteen</option>
+                                    <option>Care Taker(Teen Murti line)</option>
+                                </select>
+            </div>
+            <div class="form-group">
+                <label>Employee PIS Number</label>
+                <input class="form-control" type="text" name="p_emp_id" placeholder="Enter your PIS number here" required>
+            </div>
+            <div class="form-group">
+                <label>Remarks (if any)</label>
+                <textarea class="form-control" name="p_rmrk" rows="3"></textarea>
+            </div>
+           
+            <input type="submit" class="btn btn-success btn-lg" value="SUBMIT">
+        </form>
+    </div>
+</div>
+
+
+     
+            </div>
+            <!-- /#page-wrapper -->
+        </div>
+    </div>
+    <script src="assets/scripts/frontend.js" type="text/javascript"></script>
+</body>
+
+</html>
